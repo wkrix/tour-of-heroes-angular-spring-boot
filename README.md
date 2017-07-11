@@ -14,6 +14,20 @@ To install the archetype in your local repository execute following commands:
     mvn clean install
 
 
+Run the project
+----------------
+
+	java -jar server/target/tour-of-heroes-server.jar
+
+	
+Test on the browser
+-------------------
+
+    http://localhost:8080/
+
+
+
+
 * I used the [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin) to build the Angular application with Maven.
 I specified the node and yarn versions and the working directory in the configuration section. I also added three executions. The first execution downloads and installs node and yarn to the directories node and node_modules. Yarn downloads a lot of packages, so added both directories to the ignore list of vcs. The second execution runs yarn install in the working directory to download all yarn dependencies of my project. The third execution runs yarn build in the working directory to build the Angular frontend.
     ```xml
@@ -61,11 +75,11 @@ I specified the node and yarn versions and the working directory in the configur
 
 
 * I edited .angular-cli.json and changed the outDir in the apps section for the Spring Boot backend static resource:
-    ```json
+    ```
         "outDir": "target/client"
     ```
 
-* For the Spring Boot backend static resource I wrote these lines in client`s pom.xml:
+* For the Spring Boot backend static resource I wrote these lines in the client's pom.xml:
     ```xml
             <resources>
               <resource>
@@ -75,7 +89,7 @@ I specified the node and yarn versions and the working directory in the configur
             </resources>
     ```
     
-* In the end I added the client dependency to my server's pom:
+* Finally I added the client dependency to the server's pom:
     ```xml
                 <dependency>
                     <groupId>hu.klayton.wade.heroes</groupId>
@@ -84,16 +98,3 @@ I specified the node and yarn versions and the working directory in the configur
                     <scope>runtime</scope>
                 </dependency>
     ```
-
-Run the project
-----------------
-
-	java -jar server/target/tour-of-heroes-server.jar
-
-	
-Test on the browser
--------------------
-
-    http://localhost:8080/
-
-
