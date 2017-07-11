@@ -1,0 +1,10 @@
+insert into hero(name) values('Thor');
+insert into hero(name) values('Iron Man');
+insert into hero(name) values('Captain America');
+insert into hero(name) values('Hulk');
+insert into hero(name) values('Black Widow');
+insert into hero(name) values('Hawkeye');
+insert into hero(name) values('Scarlet Witch');
+insert into hero(name) values('Doctor Strange');
+insert into hero(name) values('Ant-Man');
+insert into hero(name) values('Sprider-Man');
